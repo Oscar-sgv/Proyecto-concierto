@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+
+// Mi primer mixin
+// @mixin heading($color: blue, $border-radius: false) {
+//     text-transform: uppercase;
+//     font-size: 2.4rem;
+//     color: $color;
+//     letter-spacing: 10px;
+
+//     @if $border-radius {
+//         border-radius: 1rem;
+//     }
+// }
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin computadora {
+    @media (min-width: v.$computadora) {
+        @content;
+    }
+}
+
+@mixin XL {
+    @media (min-width: v.$XL) {
+        @content;
+    }
+}
+
+@mixin grid ($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}
+
+@mixin resetear-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
